@@ -15,7 +15,9 @@ export class TodoListProvider {
     { title: "Faire le ménage", done: true },
     { title: "Acheter du pain", done: false },
     { title: "Faire des crêpes", done: false },
-    { title: "Faire du sport", done: true }
+    { title: "Faire du sport", done: true },
+    { title: "RDV chez le medecin", done: true},
+    { title: "Trouver un stage", done: false}
   ];
 
   getAll() {
