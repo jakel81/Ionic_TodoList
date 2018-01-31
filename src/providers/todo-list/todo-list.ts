@@ -18,6 +18,10 @@ export class TodoListProvider {
     { title: "Faire du sport", done: true }
   ];
 
+  getAll() {
+    return this.todoList;
+  }
+
   addOne(task) {
     this.todoList.push(task);
   }
