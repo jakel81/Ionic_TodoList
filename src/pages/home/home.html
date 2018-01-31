@@ -1,14 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Todo List
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+      <ion-list-header>Todo</ion-list-header>
+
+      <ion-item-sliding *ngFor="let task of todoList; let pos = index">
+          <ion-item>
+              <ion-label>{{ task.title }}</ion-label>
+              <ion-checkbox [(ngModel)]="task.done"></ion-checkbox>
+          </ion-item>
+          <ion-item-options side="right">
+              <button ion-button (click)="updateTask(task, pos)" color="primary">Edit</button>
+              <button ion-button (click)="deleteTask(pos)" color="danger">Delete</button>             
+          </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-grid>
+      <ion-row>
+          <ion-col col-4 offset-4>
+              <button ion-button (click)="addTask()" full round>Add Task</button>
+          </ion-col>
+
+      </ion-row>
+  </ion-grid>
+
+</ion-footer>
