@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class TodoListProvider {
 
   todoList = [
-    { title: "Suivre les cours", done: false },
+    { title: "Faire les courses", done: false },
     { title: "Faire le ménage", done: true },
     { title: "Acheter du pain", done: false },
     { title: "Faire des crêpes", done: false },
