@@ -10,8 +10,24 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TodoListProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello TodoListProvider Provider');
+  todoList = [
+    { title: "Suivre les cours", done: false },
+    { title: "Faire le ménage", done: true },
+    { title: "Acheter du pain", done: false },
+    { title: "Faire des crêpes", done: false },
+    { title: "Faire du sport", done: true }
+  ];
+
+  addOne(task) {
+    this.todoList.push(task);
+  }
+
+  updateOne(task, pos) {
+    this.todoList[pos] = task;
+  }
+
+  deleteOne(pos) {
+    this.todoList.splice(pos, 1);
   }
 
 }

@@ -1,3 +1,4 @@
+import { TodoListProvider } from './../../providers/todo-list/todo-list';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,11 +16,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewTaskPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  task = {
+    title: "", done: false
+  }
+
+  position = null;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public provider: TodoListProvider) {
+    this.task = navParams.get('task');
+    this.position = navParams.get('pos');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewTaskPage');
+  }
+
+  validateNewTask() {
+    if (this.position == null) {
+      this.provider.addOne(this.task);
+    } else {
+      this.provider.updateOne(this.task, this.position);
+    }
+    this.navCtrl.pop();
   }
 
 }
