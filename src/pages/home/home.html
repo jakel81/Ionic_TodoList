@@ -11,7 +11,7 @@
     <ion-list-header>Tâches</ion-list-header>
     <ion-item>
       <ion-label>Afficher</ion-label>
-      <ion-select full [(ngModel)]="mySelect" (ionChange)="onChange(mySelect)" cancelText="Annuler">
+      <ion-select full [(ngModel)]="mySelect" (ionChange)="onChange()" cancelText="Annuler">
         <ion-option value="all">Tous</ion-option>
         <ion-option value="done">Fait</ion-option>
         <ion-option value="notDone">Pas fait</ion-option>

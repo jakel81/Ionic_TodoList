@@ -13,8 +13,8 @@ import { Events } from 'ionic-angular/util/events';
 export class HomePage {
 
   public todoList;
-  public mySelect;
-  public value;
+  public mySelect = "";
+  public data = [];
 
   constructor(public navCtrl: NavController, public provider: TodoListProvider) {
     this.todoList = this.provider.getAll();
@@ -33,15 +33,19 @@ export class HomePage {
     this.navCtrl.push(NewTaskPage, data);
   }
 
-  onChange(mySelect) {
-    console.log("j'y suis");
-    if (mySelect == 'done') {
-      console.log(mySelect)
-      this.value = 1;
-    } else if (mySelect == 'notDone') {
-      this.value = 0;
-    } else {
-      this.value= -1;
+  onChange() {
+    this.todoList = this.data;
+
+    console.log("option sélectionnée " + this.mySelect);
+
+    if (this.mySelect == 'done') {
+      this.todoList = this.data.filter((task) => {
+        return task.done;
+      });
+    } else if (this.mySelect == 'notDone') {
+      this.todoList = this.data.filter((task) => {
+        return !task.done;
+      });
     }
   }
 
