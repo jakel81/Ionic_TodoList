@@ -14,7 +14,7 @@ export class HomePage {
 
   public todoList;
 
-  constructor(public navCtrl: NavController, public envents: Events, public provider: TodoListProvider) {
+  constructor(public navCtrl: NavController, public events: Events, public provider: TodoListProvider) {
     this.todoList = this.provider.getAll();
   }
 
@@ -22,7 +22,7 @@ export class HomePage {
     this.todoList.splice(pos, 1);
   }
 
-  updateTask(index, data) {
+  updateTask(data, index) {
     this.navCtrl.push(UpdateTaskPage, { task: data, pos: index });
   }
 

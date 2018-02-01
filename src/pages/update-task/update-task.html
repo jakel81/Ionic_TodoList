@@ -6,25 +6,26 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-      <ion-title>Modifier</ion-title>
-    </ion-navbar>
-  
-  </ion-header>
-  
-  <ion-content padding>
-    <ion-list>
-      <ion-item>
-        <ion-label>
-          Tâche
-        </ion-label>
-        <ion-input [(ngModel)]="task.title"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-checkbox [(ngModel)]="task.done"></ion-checkbox>
-        </ion-item>
-      <ion-item>
-        <button ion-button (click)="updateTask()" full>Valider</button>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+  <ion-navbar>
+    <ion-title>Modifier</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        Tâche
+      </ion-label>
+      <ion-input [(ngModel)]="task.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [(ngModel)]="task.done"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="updateTask()">Modifier</button>
+</ion-footer>

@@ -29,7 +29,7 @@ export class TodoListProvider {
   }
 
   updateOne(task, pos) {
-    this.todoList[pos] = task;
+    this.todoList.splice(pos, 1, task);
   }
 
   deleteOne(pos) {

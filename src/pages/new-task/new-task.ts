@@ -34,8 +34,6 @@ export class NewTaskPage {
   validateNewTask() {
     if (this.position == null) {
       this.provider.addOne(this.task);
-    } else {
-      this.provider.updateOne(this.task, this.position);
     }
     this.navCtrl.pop();
   }

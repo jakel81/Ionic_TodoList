@@ -20,8 +20,9 @@
       </ion-label>
       <ion-input [(ngModel)]="task.title"></ion-input>
     </ion-item>
-    <ion-item>
-      <button ion-button (click)="validateNewTask()" full>Valider</button>
-    </ion-item>
   </ion-list>
 </ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="validateNewTask()">Ajouter</button>
+</ion-footer>
