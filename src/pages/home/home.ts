@@ -1,3 +1,4 @@
+import { UpdateTaskPage } from './../update-task/update-task';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TodoListProvider } from '../../providers/todo-list/todo-list';
@@ -22,7 +23,7 @@ export class HomePage {
   }
 
   updateTask(index, data) {
-    this.navCtrl.push(NewTaskPage, { task: data, pos: index });
+    this.navCtrl.push(UpdateTaskPage, { task: data, pos: index });
   }
 
   addTask() {

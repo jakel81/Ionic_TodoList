@@ -8,12 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TodoListProvider } from '../providers/todo-list/todo-list';
 import { NewTaskPage } from '../pages/new-task/new-task';
+import { updateDate } from 'ionic-angular/util/datetime-util';
+import { UpdateTaskPage } from '../pages/update-task/update-task';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    NewTaskPage
+    NewTaskPage,
+    UpdateTaskPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { NewTaskPage } from '../pages/new-task/new-task';
   entryComponents: [
     MyApp,
     HomePage,
-    NewTaskPage
+    NewTaskPage,
+    UpdateTaskPage
   ],
   providers: [
     StatusBar,

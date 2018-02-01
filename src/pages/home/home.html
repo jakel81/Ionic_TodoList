@@ -9,6 +9,15 @@
 <ion-content padding>
   <ion-list>
     <ion-list-header>Tâches</ion-list-header>
+    <ion-item>
+      <ion-label>Afficher</ion-label>
+      <ion-select full [(ngModel)]="type">
+        <ion-option value="">Tous</ion-option>
+        <ion-option value="">Fait</ion-option>
+        <ion-option value="">Pas fait</ion-option>
+      </ion-select>
+    </ion-item>
+
 
     <ion-item-sliding *ngFor="let task of todoList; let pos = index">
       <ion-item>
