@@ -13,8 +13,10 @@ import { Events } from 'ionic-angular/util/events';
 export class HomePage {
 
   public todoList;
+  public mySelect;
+  public value;
 
-  constructor(public navCtrl: NavController, public events: Events, public provider: TodoListProvider) {
+  constructor(public navCtrl: NavController, public provider: TodoListProvider) {
     this.todoList = this.provider.getAll();
   }
 
@@ -29,6 +31,18 @@ export class HomePage {
   addTask() {
     var data = { task: { title: "", done: false }, pos: null };
     this.navCtrl.push(NewTaskPage, data);
+  }
+
+  onChange(mySelect) {
+    console.log("j'y suis");
+    if (mySelect == 'done') {
+      console.log(mySelect)
+      this.value = 1;
+    } else if (mySelect == 'notDone') {
+      this.value = 0;
+    } else {
+      this.value= -1;
+    }
   }
 
 }
