@@ -36,16 +36,18 @@ export class HomePage {
   onChange() {
     this.todoList = this.data;
 
-    console.log("option sélectionnée " + this.mySelect);
+    console.log("select " + this.mySelect);
 
     if (this.mySelect == 'done') {
-      this.todoList = this.data.filter((task) => {
-        return task.done;
+      this.todoList = this.data.filter((item) => {
+        return item.done;
       });
     } else if (this.mySelect == 'notDone') {
-      this.todoList = this.data.filter((task) => {
-        return !task.done;
+      this.todoList = this.data.filter((item) => {
+        return !item.done;
       });
+    } else {
+      return this.todoList;
     }
   }
 

@@ -34,7 +34,7 @@ export class UpdateTaskPage {
 
   updateTask() {
     if (this.position !== null) {
-      console.log("inupdateTask");
+      console.log("inUpdateTask");
       this.provider.updateOne(this.task, this.position);
     }
     this.navCtrl.pop();
